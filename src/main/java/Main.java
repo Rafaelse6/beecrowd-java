@@ -1,26 +1,30 @@
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.Locale;
 import java.util.Scanner;
 
 
 public class Main {
 
     public static void main(String[] args) throws IOException {
+        Locale.setDefault(Locale.US);
         Scanner scanner = new Scanner(System.in);
+        scanner.useLocale(Locale.US);
 
-        Map<Integer, String> ddd = new HashMap<>();
-        ddd.put(61, "Brasilia");
-        ddd.put(71, "Salvador");
-        ddd.put(11, "Sao Paulo");
-        ddd.put(21, "Rio de Janeiro");
-        ddd.put(32, "Juiz de Fora");
-        ddd.put(19, "Campinas");
-        ddd.put(27, "Vitoria");
-        ddd.put(31, "Belo Horizonte");
+        double[] numbers = new double[3];
+        for (int i = 0; i < 3; i++) {
+            numbers[i] = scanner.nextDouble();
+        }
 
-        int cityCode = scanner.nextInt();
+        double a = numbers[0];
+        double b = numbers[1];
+        double c = numbers[2];
 
-        System.out.println(ddd.getOrDefault(cityCode, "DDD nao cadastrado"));
+        if (a + b > c && a + c > b && b + c > a) {
+            double perimeter = a + b + c;
+            System.out.printf("Perimetro = %.1f%n", perimeter);
+        } else {
+            double area = ((a + b) * c) / 2;
+            System.out.printf("Area = %.1f%n", area);
+        }
     }
 }
