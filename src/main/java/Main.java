@@ -10,11 +10,11 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         scanner.useLocale(Locale.US);
 
-        int n = scanner.nextInt();
-        for (int i = 2; i <=n; i+= 2){
-            int result = i * i;
-            System.out.println(i + "^2 = " + result);
+        for(int i = 1; i <= 100; i++){
+            if (i % 2 == 0){
+                System.out.println(i);
+            }
         }
-        scanner.close();
+
     }
 }
