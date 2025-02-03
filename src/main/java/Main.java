@@ -10,13 +10,11 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         scanner.useLocale(Locale.US);
 
-        int a = scanner.nextInt();
-        int b = scanner.nextInt();
-
-        if (a % b == 0 || b % a == 0){
-            System.out.println("Sao Multiplos");
-        }else {
-            System.out.println("Nao sao Multiplos");
+        int n = scanner.nextInt();
+        for (int i = 2; i <=n; i+= 2){
+            int result = i * i;
+            System.out.println(i + "^2 = " + result);
         }
+        scanner.close();
     }
 }
